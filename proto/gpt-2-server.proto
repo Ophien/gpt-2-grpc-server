@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.routeguide";
+option java_outer_classname = "RouteGuideProto";
+option objc_class_prefix = "RTG";
+
+package gpt2server;
+
+message GenMsg {
+    string input_seed_sentence = 1;
+    string input_model_name = 2;
+    string output_generated_text = 3;
+}
+
+service gpt2 {
+    rpc Generate(GenMsg) returns (GenMsg) {}
+}
