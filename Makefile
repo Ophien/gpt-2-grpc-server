@@ -1,4 +1,4 @@
-PYTHON = python
+PYTHON = python3
 PROTOC = grpc_tools.protoc
 INCLUDE = ./proto
 SRC = ./src
