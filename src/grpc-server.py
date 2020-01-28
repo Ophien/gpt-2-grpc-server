@@ -24,12 +24,11 @@ class GPT2:
         self.seed = None
         self.nsamples = 1
         self.batch_size = 1
-        self.length = None
         self.top_k = 40
         self.top_p = 1.0
         self.nlp = spacy.load('en')
 
-    def generate(self, seed_sentence="Universe", model_name='117M', temperature=0.8, improvise=False):
+    def generate(self, seed_sentence="Universe", model_name='117M', temperature=0.8, improvise=False, length=None):
         if self.batch_size is None:
             self.batch_size = 1
 
@@ -41,9 +40,9 @@ class GPT2:
         with open(os.path.join('models', model_name, 'hparams.json')) as f:
             self.hparams.override_from_dict(json.load(f))
 
-        if self.length is None:
-            self.length = self.hparams.n_ctx // 2
-        elif self.length > self.hparams.n_ctx:
+        if length is None:
+            length = self.hparams.n_ctx // 2
+        elif length > self.hparams.n_ctx:
             raise ValueError("Can't get samples longer than window size: %s" % self.hparams.n_ctx)
 
         subject = ""
@@ -72,7 +71,7 @@ class GPT2:
                 context = tf.placeholder(tf.int32, [self.batch_size, None])
                 output = sample.sample_sequence(
                     hparams=self.hparams,
-                    length=self.length,
+                    length=length,
                     context=context,
                     batch_size=self.batch_size,
                     temperature=temperature,
@@ -82,7 +81,7 @@ class GPT2:
             else:
                 output = sample.sample_sequence(
                     hparams=self.hparams, 
-                    length=self.length,
+                    length=length,
                     start_token=self.enc.encoder['<|endoftext|>'],
                     batch_size=self.batch_size,
                     temperature=temperature, 
@@ -95,12 +94,7 @@ class GPT2:
             saver.restore(sess, ckpt)
 
             if improvise is False:
-                raw_text = subject
-
-                if len(raw_text) == 0:
-                    raw_text = "Tell me about the universe"
-
-                context_tokens = self.enc.encode(raw_text)
+                context_tokens = self.enc.encode(seed_sentence)
                 out = sess.run(output, feed_dict={
                     context: [context_tokens for _ in range(self.batch_size)]
                 })[:, len(context_tokens):]
@@ -119,7 +113,7 @@ class Gpt2Servicer(gpt_2_server_pb2_grpc.gpt2Servicer):
 
     def Generate(self, request, context):
         print(request.input_seed_sentence)
-        generated_text = self.network.generate(seed_sentence=request.input_seed_sentence, model_name=request.input_model_name, improvise=False)
+        generated_text = self.network.generate(seed_sentence=request.input_seed_sentence, model_name=request.input_model_name, improvise=False, length=request.input_length)
         return gpt_2_server_pb2.GenMsg(input_seed_sentence=request.input_seed_sentence, input_model_name=request.input_model_name, output_generated_text=generated_text)
 
     def Train(self, request, context):
@@ -129,7 +123,7 @@ class Gpt2Servicer(gpt_2_server_pb2_grpc.gpt2Servicer):
 
     def Improvise(self, request, context):
         print(request.input_model_name)
-        generated_text = self.network.generate(model_name=request.input_model_name, improvise=True)
+        generated_text = self.network.generate(model_name=request.input_model_name, improvise=True, length=request.input_length)
         return gpt_2_server_pb2.GenMsg(input_seed_sentence="None", input_model_name=request.input_model_name, output_generated_text=generated_text)
 
 def serve():

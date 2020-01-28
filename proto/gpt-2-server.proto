@@ -10,7 +10,8 @@ package gpt2server;
 message GenMsg {
     string input_seed_sentence = 1;
     string input_model_name = 2;
-    string output_generated_text = 3;
+    int32 input_length = 3;
+    string output_generated_text = 4;
 }
 
 message TrainMsg {
