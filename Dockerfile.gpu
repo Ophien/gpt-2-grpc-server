@@ -21,3 +21,4 @@ RUN make
 
 WORKDIR /home/src
 RUN python3 download_model.py "117M"
+RUn python3 -m spacy download en

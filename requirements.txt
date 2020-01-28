@@ -6,4 +6,4 @@ tensorflow==1.14.0
 grpcio==1.26.0
 grpcio-tools
 toposort
-
+spacy

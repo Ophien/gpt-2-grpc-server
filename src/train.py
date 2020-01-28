@@ -16,6 +16,10 @@ from load_dataset import load_dataset, Sampler
 from accumulate import AccumulatingOptimizer
 import memory_saving_gradients
 
+import dataset_processing
+import encode
+import shutil
+
 CHECKPOINT_DIR = 'checkpoint'
 SAMPLE_DIR = 'samples'
 
@@ -292,7 +296,16 @@ def main():
             print('interrupted')
             save()
 
-def custom_train(dataset = 'universe.npz',
+def parse_dataset(dataset_path):
+    dataset_processing.process_dataset(dataset_path + ".txt")
+
+def generate_npz_file(dataset_path):
+    if os.path.exists(dataset_path + ".npz"):
+        return
+    encode.save_npz(path=dataset_path)
+
+def custom_train(dataset_path = 'example_train_datasets/universe',
+         checkpoint_dir = 'models',
          iterations = 10,
          model_name = '117M',
          combine = 50000,
@@ -307,7 +320,7 @@ def custom_train(dataset = 'universe.npz',
          top_k = 40,
          top_p = 0.0,
          restore_from = 'latest',
-         run_name = 'run1',
+         run_name = 'last',
          sample_every = 100,
          sample_length = 1023,
          sample_num = 1,
@@ -316,6 +329,22 @@ def custom_train(dataset = 'universe.npz',
          val_batch_size = 2,
          val_batch_count = 40,
          val_every = 0):
+
+    common_files = ["/encoder.json",
+                    "/hparams.json",
+                    "/vocab.bpe"]
+
+    dataset_name = dataset_path.split('/')
+    dataset_name = dataset_name[len(dataset_name) - 1]
+
+    # set the last run name to this dataset name
+    run_name = dataset_name
+
+    # pre-process dataset
+    parse_dataset(dataset_path)
+
+    # generate npz file
+    generate_npz_file(dataset_path)
 
     enc = encoder.get_encoder(model_name)
     hparams = model.default_hparams()
@@ -392,7 +421,7 @@ def custom_train(dataset = 'universe.npz',
         summaries = tf.summary.merge([summary_lr, summary_loss])
 
         summary_log = tf.summary.FileWriter(
-            os.path.join(CHECKPOINT_DIR, run_name))
+            os.path.join(checkpoint_dir, run_name))
 
         saver = tf.train.Saver(
             var_list=all_vars,
@@ -402,7 +431,7 @@ def custom_train(dataset = 'universe.npz',
 
         if restore_from == 'latest':
             ckpt = tf.train.latest_checkpoint(
-                os.path.join(CHECKPOINT_DIR, run_name))
+                os.path.join(checkpoint_dir, run_name))
             if ckpt is None:
                 # Get fresh GPT weights if new run.
                 ckpt = tf.train.latest_checkpoint(
@@ -416,7 +445,7 @@ def custom_train(dataset = 'universe.npz',
         saver.restore(sess, ckpt)
 
         print('Loading dataset...')
-        chunks = load_dataset(enc, dataset, combine, encoding=encoding)
+        chunks = load_dataset(enc, dataset_path + ".npz", combine, encoding=encoding)
         data_sampler = Sampler(chunks)
         if val_every > 0:
             if val_dataset:
@@ -434,7 +463,7 @@ def custom_train(dataset = 'universe.npz',
                            for _ in range(val_batch_count)]
 
         counter = 1
-        counter_path = os.path.join(CHECKPOINT_DIR, run_name, 'counter')
+        counter_path = os.path.join(checkpoint_dir, run_name, 'counter')
         if os.path.exists(counter_path):
             # Load the step number if we're resuming a run
             # Add 1 so we don't immediately try to save again
@@ -442,14 +471,14 @@ def custom_train(dataset = 'universe.npz',
                 counter = int(fp.read()) + 1
 
         def save():
-            maketree(os.path.join(CHECKPOINT_DIR, run_name))
+            maketree(os.path.join(checkpoint_dir, run_name))
             print(
                 'Saving',
-                os.path.join(CHECKPOINT_DIR, run_name,
+                os.path.join(checkpoint_dir, run_name,
                              'model-{}').format(counter))
             saver.save(
                 sess,
-                os.path.join(CHECKPOINT_DIR, run_name, 'model'),
+                os.path.join(checkpoint_dir, run_name, 'model'),
                 global_step=counter)
             with open(counter_path, 'w') as fp:
                 fp.write(str(counter) + '\n')
@@ -535,6 +564,12 @@ def custom_train(dataset = 'universe.npz',
 
             # save results
             save()
+
+            # copy base model files to the trained model folder           
+            for f in common_files:
+                dest_full_path = checkpoint_dir + "/" + model_name + "/" + f
+                destination = checkpoint_dir + "/" + run_name + "/" + f
+                shutil.copyfile(dest_full_path, destination)
 
         except KeyboardInterrupt:
             print('error/exception')

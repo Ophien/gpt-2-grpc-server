@@ -16,37 +16,29 @@ import train
 import model
 import sample
 import encoder
+import spacy
+import train
 
 class GPT2:
-    def __init__(self, 
-                 model_name = '117M', 
-                 seed = None, 
-                 nsamples = 1,
-                 batch_size = 1,
-                 length = None,
-                 temperature = 0.8,
-                 top_k = 40,
-                 top_p = 1.0):
+    def __init__(self):
+        self.seed = None
+        self.nsamples = 1
+        self.batch_size = 1
+        self.length = None
+        self.top_k = 40
+        self.top_p = 1.0
+        self.nlp = spacy.load('en')
 
-        self.model_name = model_name
-        self.seed = seed
-        self.nsamples = nsamples
-        self.batch_size = batch_size
-        self.length = length
-        self.temperature = temperature
-        self.top_k = top_k
-        self.top_p = top_p
-
-    def configure(self):
+    def generate(self, seed_sentence="Universe", model_name='117M', temperature=0.8, improvise=False):
         if self.batch_size is None:
             self.batch_size = 1
 
         assert self.nsamples % self.batch_size == 0
 
-        self.enc = encoder.get_encoder(self.model_name)
+        self.enc = encoder.get_encoder(model_name)
         self.hparams = model.default_hparams()
 
-        with open(os.path.join('models', self.model_name, 'hparams.json')) as f:
+        with open(os.path.join('models', model_name, 'hparams.json')) as f:
             self.hparams.override_from_dict(json.load(f))
 
         if self.length is None:
@@ -54,72 +46,94 @@ class GPT2:
         elif self.length > self.hparams.n_ctx:
             raise ValueError("Can't get samples longer than window size: %s" % self.hparams.n_ctx)
 
-    def generate(self, seed_sentence):
+        subject = ""
+        indirect_object = ""
+        direct_object = ""
+
+        if improvise is False:
+            # pre-process input sentence to get subject, direct object, and indirect object
+            parsed_text = self.nlp(seed_sentence)
+
+            for text in parsed_text:
+                if text.dep_ == "nsubj":
+                    subject += text.orth_ + " "
+                if text.dep_ == "iobj":
+                    indirect_object += text.orth_ + " "
+                if text.dep_ == "dobj":
+                    direct_object += text.orth_ + " "
+
         with tf.Session(graph=tf.Graph()) as sess:
-            context = tf.placeholder(tf.int32, [self.batch_size, None])
             np.random.seed(self.seed)
             tf.set_random_seed(self.seed)
-            
-            output = sample.sample_sequence(
-                hparams=self.hparams,
-                length=self.length,
-                context=context,
-                batch_size=self.batch_size,
-                temperature=self.temperature,
-                top_k=self.top_k,
-                top_p=self.top_p
-            )
-            
+            context = None
+            output = None
+
+            if improvise is False:
+                context = tf.placeholder(tf.int32, [self.batch_size, None])
+                output = sample.sample_sequence(
+                    hparams=self.hparams,
+                    length=self.length,
+                    context=context,
+                    batch_size=self.batch_size,
+                    temperature=temperature,
+                    top_k=self.top_k,
+                    top_p=self.top_p
+                )
+            else:
+                output = sample.sample_sequence(
+                    hparams=self.hparams, 
+                    length=self.length,
+                    start_token=self.enc.encoder['<|endoftext|>'],
+                    batch_size=self.batch_size,
+                    temperature=temperature, 
+                    top_k=self.top_k, 
+                    top_p=self.top_p
+                )[:, 1:]
+
             saver = tf.train.Saver()
-            ckpt = tf.train.latest_checkpoint(os.path.join('models', self.model_name))
+            ckpt = tf.train.latest_checkpoint(os.path.join('models', model_name))
             saver.restore(sess, ckpt)
-            raw_text = seed_sentence
-            
-            context_tokens = self.enc.encode(raw_text)
-            out = sess.run(output, feed_dict={
-                context: [context_tokens for _ in range(self.batch_size)]
-            })[:, len(context_tokens):]
 
-            text = self.enc.decode(out[0])
-            output_text = text.split('.')[0] + (".")
+            if improvise is False:
+                raw_text = subject
 
-            return output_text
+                if len(raw_text) == 0:
+                    raw_text = "Tell me about the universe"
+
+                context_tokens = self.enc.encode(raw_text)
+                out = sess.run(output, feed_dict={
+                    context: [context_tokens for _ in range(self.batch_size)]
+                })[:, len(context_tokens):]
+
+                text = self.enc.decode(out[0])
+            else:
+                out = sess.run(output)
+                text = self.enc.decode(out[0])
+
+            return text
 
 # this is the implementation of the rpc calls for the defined protobuffer file
 class Gpt2Servicer(gpt_2_server_pb2_grpc.gpt2Servicer):
-    def __init__(self,
-                 model_name = '117M', 
-                 seed = None, 
-                 nsamples = 1,
-                 batch_size = 1,
-                 length = None,
-                 temperature = 0.8,
-                 top_k = 40,
-                 top_p = 1.0):
-
-        self.network = GPT2(model_name = model_name,
-                            seed = seed,
-                            nsamples = nsamples,
-                            batch_size = batch_size,
-                            length = length,
-                            temperature = temperature,
-                            top_k = top_k,
-                            top_p = top_p)
-
-        self.network.configure()        
+    def __init__(self):
+        self.network = GPT2()    
 
     def Generate(self, request, context):
         print(request.input_seed_sentence)
-        generated_text = self.network.generate(request.input_seed_sentence)
-        return gpt_2_server_pb2.GenMsg(input_seed_sentence="none", input_model_name="117M", output_generated_text=generated_text)
+        generated_text = self.network.generate(seed_sentence=request.input_seed_sentence, model_name=request.input_model_name, improvise=False)
+        return gpt_2_server_pb2.GenMsg(input_seed_sentence=request.input_seed_sentence, input_model_name=request.input_model_name, output_generated_text=generated_text)
+
+    def Train(self, request, context):
+        print(request.input_dataset_path)
+        train.custom_train(dataset_path = request.input_dataset_path, iterations=request.input_iterations)
+        return gpt_2_server_pb2.TrainMsg(input_dataset_path = request.input_dataset_path, input_iterations = request.input_iterations, output_status = "Done")
+
+    def Improvise(self, request, context):
+        print(request.input_model_name)
+        generated_text = self.network.generate(model_name=request.input_model_name, improvise=True)
+        return gpt_2_server_pb2.GenMsg(input_seed_sentence="None", input_model_name=request.input_model_name, output_generated_text=generated_text)
 
 def serve():
     parser = argparse.ArgumentParser()
-
-    parser.add_argument("model_name",
-                        type = str,
-                        default = "universe",
-                        help = "Model to be loaded")
 
     parser.add_argument("server_port",
                        type = str,
@@ -130,13 +144,11 @@ def serve():
 
     os.system('reset')
 
-    print("Loaded model: " + args.model_name)
-
     # create server instance
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
 
     # add the services for the gpt2 
-    gpt_2_server_pb2_grpc.add_gpt2Servicer_to_server(Gpt2Servicer(model_name = args.model_name), server)
+    gpt_2_server_pb2_grpc.add_gpt2Servicer_to_server(Gpt2Servicer(), server)
 
     # set server port
     server.add_insecure_port("[::]:" + args.server_port)

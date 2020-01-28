@@ -18,6 +18,13 @@ parser.add_argument('--encoding', type=str, default='utf-8', help='Set the encod
 parser.add_argument('in_text', metavar='PATH', type=str, help='Input file, directory, or glob pattern (utf-8 text).')
 parser.add_argument('out_npz', metavar='OUT.npz', type=str, help='Output file path')
 
+def save_npz(model_name="117M", path="example_train_datasets/universe", combine=50000, encoding='utf-8'):
+    enc = encoder.get_encoder(model_name)
+    print('Reading files')
+    chunks = load_dataset(enc, path + ".txt", combine, encoding=encoding)
+    print('Writing', path + ".npz")
+    np.savez_compressed(path + ".npz", *chunks)
+
 def main():
     args = parser.parse_args()
     enc = encoder.get_encoder(args.model_name)
@@ -25,7 +32,6 @@ def main():
     chunks = load_dataset(enc, args.in_text, args.combine, encoding=args.encoding)
     print('Writing', args.out_npz)
     np.savez_compressed(args.out_npz, *chunks)
-
 
 if __name__ == '__main__':
     main()
