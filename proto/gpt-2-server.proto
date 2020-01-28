@@ -13,6 +13,14 @@ message GenMsg {
     string output_generated_text = 3;
 }
 
+message TrainMsg {
+    string input_dataset_path = 1;
+    int32 input_iterations = 2;
+    string output_status = 3;
+}
+
 service gpt2 {
     rpc Generate(GenMsg) returns (GenMsg) {}
+    rpc Improvise(GenMsg) returns (GenMsg) {}
+    rpc Train(TrainMsg) returns (TrainMsg) {}
 }

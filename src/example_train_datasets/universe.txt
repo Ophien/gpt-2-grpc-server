@@ -1,0 +1,307 @@
+Let us go rambling about the Universe. This is the invitation that American astronomer Harlow Shapley gave to an audience in Washington DC in 1920. He was taking part in the socalled Great Debate with fellow scientist Heber Curtis on the scale of the Universe.
+
+Shapley believed that our Milky Way galaxy was 300,000 light years across. That is actually three times too big according to the latest thinking, but his measurements were pretty good for the time. In particular, he calculated broadly correct proportional distances within the Milky Way – the position of our Sun relative to the centre of the galaxy, for instance.
+
+In the early 20th Century, though, 300,000 light years seemed to many of Shapleys contemporaries an almost absurdly large figure. And the idea that other Milky Waylike spiral galaxies – which could be seen with telescopes – were equally large was outlandish.
+
+Indeed, Shapley himself believed the Milky Way must be exceptional. Even if the spirals are stellar, they are not comparable in size with our stellar system, he told his listeners.
+
+Curtis disagreed. He thought, correctly, that there were many other galaxies as big as our own spread throughout the Universe. But, interestingly, his starting point was a belief that the Milky Way was far smaller than Shapley had calculated. According to the calculations that Curtis used, the Milky Way was just 30,000 light years in diameter – or, about three times too small going on modern measurements.
+
+Three times too big; three times too small – when we are talking about such enormous distances it is understandable that astronomers debating almost a century ago could get their figures a little bit wrong.
+
+Today we are fairly confident that the Milky Way is probably between 100,000 and 150,000 light years across. The observable Universe is, of course, much larger. According to current thinking it is about 93 billion light years in diameter. How can we be so sure? And how did we ever come up with such measurements from right here on Earth?
+
+Ever since Copernicus argued that the Earth was not the centre of the Solar System, it seems we have always found it difficult to rewrite our preconceptions of what the Universe is – and especially, how big it may be. Even today, as we will see, we are gathering new evidence to suggest the whole Universe may be much bigger than some have recently thought.
+
+Caitlin Casey, an astronomer at the University of Texas at Austin, studies the Universe as we know it. As she points out, astronomers have developed an ingenious array of tools and measuring systems to calculate not just the distance from Earth to other bodies in our Solar System, but the spans between galaxies and the journey to the edge of the observable Universe itself.
+
+The steps to measuring all these things are known as the cosmic distance ladder. The first rung of the ladder is easy enough for us to get onto and these days it relies on modern technology.
+
+We can just bounce radio waves off of neighbouring planets in the Solar System, like Venus and Mars, and measure the time it takes for those waves to come back to Earth, says Casey. That gives us a very precise measurement.
+
+Big radio telescopes like Arecibo in Puerto Rico can do this sort of work – but they can also do even more than that. Arecibo, for instance, can detect asteroids flying around the Solar System and even produce images of them based on how radio waves reflect off the asteroids surface.
+
+But using radio waves to measure distances beyond our Solar System is not practical. The next rung on the cosmic distance ladder is something known as parallax measurement.
+
+This is also something we do all the time without realising. Humans, like many animals, intuitively recognise the distance between themselves and objects, thanks to the fact that we have two eyes.
+
+If you hold an object in front of you – say your hand – and look at it with one eye open, then switch to using only the other eye, you will see your hand appears to shift sideways slightly. This is called parallax. The difference between those two observations can be used to work out the distance to the object in question.
+
+Our brains do it naturally with the information from both our eyes, and astronomers do exactly the same thing with nearby stars, except they use different sensors: telescopes.
+
+Imagine having two eyes floating in space, either side of our Sun. Thanks to the Earths orbit, that is exactly what we do have, and we can view stars shift relative to objects in the background by this method.
+
+We take a measurement of where stars are in the sky, say, in January and we wait six months and measure those same stars in July, when were on the opposite side of the Sun, says Casey.
+
+However, there is a point at which objects are so far away – about 100 light years – that the observed shift is too small to provide a useful calculation. At this distance, we are still nowhere near the edge of our own galaxy.
+
+The next step up is a technique called main sequence fitting. It relies on our knowledge of how stars of a certain size – known as main sequence stars – evolve over time.
+
+For one thing, they change colour, gradually becoming redder with age. By measuring their colour and brightness accurately, and then comparing this to what is known about the distance of closer main sequence stars measurable by parallax, we can estimate the positions of these more distant stars.
+
+The principle that backs these calculations is that which states that stars of the same mass and age would appear equally bright were they the same distance from us. Since they are often not, we can use the difference in those measurements to work out how far away they actually are.
+
+Main sequence stars, when used for this analysis, are considered one type of standard candle – meaning a body whose magnitude  we can calculate mathematically. These candles are dotted around space, lighting the Universe in predictable ways. But main sequence stars are not the only examples.
+
+This understanding of how brightness relates to distance is pretty fundamental to working out the distance to even farther objects – like stars in other galaxies. Main sequence fitting will not work there, though, because the light from those stars – which are millions of light years away if not more – is hard to analyse with accuracy.
+
+But way back in 1908, a scientist called Henrietta Swan Leavitt at Harvard came up with a fantastic discovery that has helped us measure such colossal distances. Swan Leavitt realised that there was a special class of stars called Cepheid variables.
+
+She made this observation that a certain type of star varies its brightness over time, and the variation in the brightness, the pulsations of these stars, relates directly to how bright they are intrinsically, says Casey.
+
+In other words, a brighter Cepheid will pulsate more slowly  than a dimmer Cepheid. Because astronomers can measure the pulse of a Cepheid relatively easily, they can predict how bright the star is. Then, by observing how bright it actually appears to us, they can calculate its distance.
+
+This is similar in principle to the mainsequence fitting approach, in that brightness is again the key. But the key point is that distance can be measured in different ways. And the more ways of measuring distances we have, the better we can understand the true scale of our cosmic backyard.
+
+It was the detection of such stars in our own galaxy that convinced Harlow Shapley of its great size.
+
+In the early 1920s, Edwin Hubble detected Cepheid variables in the nearby Andromeda galaxy and discerned that it was just under a million light years away.
+
+Today, our best estimate is that the galaxy is actually 2.54 million light years away. But that does not shame Hubbles measurement. In fact, we are still trying to work out a best estimate for the distance to Andromeda. The 2.54 million light years figure is actually an average of several recent calculations.
+
+This is the point at which the sheer scale of the Universe, even now, continues to boggle our minds. We can make very good estimates, but in truth it is extremely difficult to measure distances between galaxies with fine accuracy. The Universe really is that big. And it does not stop there.
+
+Hubble also measured the brightness of exploding white dwarf stars – Type 1A supernovas. These can be seen in quite distant galaxies, billions of light years away.
+
+Because the brightness of these explosions is calculable, we can determine how far away they are, just like we can with Cepheid variables. The Type 1A supernovas and Cepheid variables, then, are both additional examples of what astronomers call standard candles.
+
+But there is one more feature of the Universe that can help us to measure really extreme distances. It is called redshift.
+
+If an ambulance or police car blaring a siren has ever passed you in the street, you will be familiar with the Doppler Effect. As the ambulance approaches you the siren seems high in pitch and then, as it passes you and moves away, it falls again.
+
+The same thing happens with light waves, on a much finer scale. We can detect the change by analysing the spectrum of light from distant bodies. This spectrum will have dark lines in it because some specific colours are absorbed by elements in and around the light source – the surface of stars, for example.
+
+The further away objects are from us, the further towards the red end of the spectrum those lines will be shifted. That is not just because the objects are far away, but because they are actually moving further away from us over time, thanks to the Universes expansion. And seeing redshift in the light from distant galaxies is one way of proving that the Universe is, indeed, expanding.
+
+It is like putting dots on the surface of a balloon – each representing a galaxy – and then blowing up the balloon, says Kartik Sheth, a programme scientist at NASA. As the balloon expands the distance between the dots on its surface grows. As the Universe is expanding, each galaxy is moving away from the others.
+
+Basically, a wave would normally just be whatever frequency it was emitted at, but now youre stretching spacetime itself so therefore the wave looks longer.
+
+The faster that galaxy is moving from us, the further away it must be – and the more redshifted its light will be when we analyse it back here on Earth. Again, it was Edwin Hubble who discovered that there was a proportional relationship between his Cepheids in distant galaxies and how much the light from those galaxies was redshifted.
+
+Now comes the big key to our puzzle. The most redshifted light we can detect in the observable Universe suggests that light has reached us from galaxies that are 13.8 billion years old.
+
+Because this is the oldest light we have detected, that also gives us a measurement for the age of the Universe itself.
+
+But over the last 13.8 billion years, the Universe has been continually expanding – and at first it did so very rapidly. Taking that into account, astronomers have worked out that the galaxies right on the edge of the observable Universe, whose light has taken 13.8 billion years to reach us, must now be 46.5 billion light years away.
+
+That is our best measurement for the radius of the observable Universe. Doubling it, of course, gives the diameter: 93 billion light years.
+
+This figure rests on many other measurements and bits of science, and it is the culmination of centuries of work. But, as Casey notes, it is still a little rough.
+
+For one thing, given the complexity of some of the oldest galaxies we can detect, it is not clear how they were able to form so quickly after the Big Bang. One possibility is that, somewhere, a few of our calculations are not quite right.
+
+If one of the rungs of the cosmic distance ladder is off by 10%, then everythings off by 10%, because they rely on each other, says Casey.
+
+And where things get really complex is when we try to think about the Universe beyond that which is observable. The whole Universe, as it were. Depending on which theory of the shape of the Universe you prefer, the whole Universe could actually be finite or infinite.
+
+Recently, Mihran Vardanyan and colleagues at the University of Oxford in the UK analysed known data about objects in the observable Universe, to see if they could work out anything about the shape of the whole Universe.
+
+The result, after using computer algorithms to look for meaningful patterns in the data, was a new estimate. The whole Universe is at least 250 times as large as the observable Universe.
+
+We can never see these more distant regions. Still, the observable Universe alone should be big enough for most people. Indeed, for scientists like Casey and Sheth, it remains a constant source of fascination.
+
+Everything that weve learned about the Universe – how big it is, all the amazing objects that are in it – we do that simply by collecting these photons of light that have travelled millions and millions of light years only to come and die on our detectors, our cameras or radio telescopes, says Sheth.
+
+Its rather humbling, says Casey. Astronomy has taught us that were not the centre of the Universe, were not even at the centre of our Solar System or at the centre of our galaxy.
+
+One day, we might travel physically much further into the Universe around us than we have so far dreamed. For now, we can only look. But just looking can let us ramble pretty far.
+
+<|endoftext|>
+
+The Universe  is all of space and time as a consequence, ‘the Universe’ and ‘the multiverse’ are synonymous in such theories.
+
+The earliest cosmological models of the Universe were developed by ancient Greek and Indian philosophers and were geocentric, placing Earth at the center. Over the centuries, more precise astronomical observations led Nicolaus Copernicus to develop the heliocentric model with the Sun at the center of the Solar System. In developing the law of universal gravitation, Isaac Newton built upon Copernicus work as well as Johannes Keplers laws of planetary motion and observations by Tycho Brahe.
+
+Further observational improvements led to the realization that the Sun is one of hundreds of billions of stars in the Milky Way, which is one of at least hundreds of billions of galaxies in the Universe. Many of the stars in our galaxy have planets. At the largest scale, galaxies are distributed uniformly and the same in all directions, meaning that the Universe has neither an edge nor a center. At smaller scales, galaxies are distributed in clusters and superclusters which form immense filaments and voids in space, creating a vast foamlike structure.
+
+The Big Bang theory is the prevailing cosmological description of the development of the Universe. Under this theory, space and time emerged together 13.799±0.021 billion years ago and the energy and matter initially present have become less dense as the Universe expanded. After an initial accelerated expansion called the inflationary epoch at around 10−32 seconds, and the separation of the four known fundamental forces, the Universe gradually cooled and continued to expand, allowing the first subatomic particles and simple atoms to form. Dark matter gradually gathered, forming a foamlike structure of filaments and voids under the influence of gravity. Giant clouds of hydrogen and helium were gradually drawn to the places where dark matter was most dense, forming the first galaxies, stars, and everything else seen today. It is possible to see objects that are now further away than 13.799 billion lightyears because space itself has expanded, and it is still expanding today. This means that objects which are now up to 46.5 billion lightyears away can still be seen in their distant past, because in the past, when their light was emitted, they were much closer to Earth.
+
+From studying the movement of galaxies, it has been discovered that the universe contains much more matter than is accounted for by visible objects; stars, galaxies, nebulas and interstellar gas. This unseen matter is known as dark matter
+
+There are many competing hypotheses about the ultimate fate of the universe and about what, if anything, preceded the Big Bang, while other physicists and philosophers refuse to speculate, doubting that information about prior states will ever be accessible. Some physicists have suggested various multiverse hypotheses, in which our universe might be one among many universes that likewise exist. 
+
+<|endoftext|>
+
+The physical Universe is defined as all of space and time
+
+The Universe is often defined as the totality of existence, or everything that exists, everything that has existed, and everything that will exist. 
+
+<|endoftext|>
+
+The word universe derives from the Old French word univers, which in turn derives from the Latin word universum.
+
+<|endoftext|>
+
+A term for universe among the ancient Greek philosophers from Pythagoras onwards was τὸ πᾶν, tò pân .
+
+<|endoftext|>
+
+The prevailing model for the evolution of the Universe is the Big Bang theory. The Big Bang model states that the earliest state of the Universe was an extremely hot and dense one, and that the Universe subsequently expanded and cooled. The model is based on general relativity and on simplifying assumptions such as homogeneity and isotropy of space. A version of the model with a cosmological constant  and cold dark matter, known as the LambdaCDM model, is the simplest model that provides a reasonably good account of various observations about the Universe. The Big Bang model accounts for observations such as the correlation of distance and redshift of galaxies, the ratio of the number of hydrogen to helium atoms, and the microwave radiation background. 
+
+<|endoftext|>
+
+The initial hot, dense state is called the Planck epoch, a brief period extending from time zero to one Planck time unit of approximately 10−43 seconds. During the Planck epoch, all types of matter and all types of energy were concentrated into a dense state, and gravity—currently the weakest by far of the four known forces—is believed to have been as strong as the other fundamental forces, and all the forces may have been unified. Since the Planck epoch, space has been expanding to its present scale, with a very short but intense period of cosmic inflation believed to have occurred within the first 10−32 seconds. This was a kind of expansion different from those we can see around us today. Objects in space did not physically move; instead the metric that defines space itself changed. Although objects in spacetime cannot move faster than the speed of light, this limitation does not apply to the metric governing spacetime itself. This initial period of inflation is believed to explain why space appears to be very flat, and much larger than light could travel since the start of the universe.
+
+Within the first fraction of a second of the universes existence, the four fundamental forces had separated. As the universe continued to cool down from its inconceivably hot state, various types of subatomic particles were able to form in short periods of time known as the quark epoch, the hadron epoch, and the lepton epoch. Together, these epochs encompassed less than 10 seconds of time following the Big Bang. These elementary particles associated stably into ever larger combinations, including stable protons and neutrons, which then formed more complex atomic nuclei through nuclear fusion. This process, known as Big Bang nucleosynthesis, only lasted for about 17 minutes and ended about 20 minutes after the Big Bang, so only the fastest and simplest reactions occurred. About 25% of the protons and all the neutrons in the universe, by mass, were converted to helium, with small amounts of deuterium  and traces of lithium. Any other element was only formed in very tiny quantities. The other 75% of the protons remained unaffected, as hydrogen nuclei.
+
+After nucleosynthesis ended, the universe entered a period known as the photon epoch. During this period, the Universe was still far too hot for matter to form neutral atoms, so it contained a hot, dense, foggy plasma of negatively charged electrons, neutral neutrinos and positive nuclei. After about 377,000 years, the universe had cooled enough that electrons and nuclei could form the first stable atoms. This is known as recombination for historical reasons; in fact electrons and nuclei were combining for the first time. Unlike plasma, neutral atoms are transparent to many wavelengths of light, so for the first time the universe also became transparent. The photons released .
+
+As the Universe expands, the energy density of electromagnetic radiation decreases more quickly than does that of matter because the energy of a photon decreases with its wavelength. At around 47,000 years, the energy density of matter became larger than that of photons and neutrinos, and began to dominate the large scale behavior of the universe. This marked the end of the radiationdominated era and the start of the matterdominated era.
+
+In the earliest stages of the universe, tiny fluctuations within the universes density led to concentrations of dark matter gradually forming. Ordinary matter, attracted to these by gravity, formed large gas clouds and eventually, stars and galaxies, where the dark matter was most dense, and voids where it was least dense. After around 100  300 million years, In this era, the expansion of the Universe is accelerating due to dark energy. 
+
+<|endoftext|>
+
+Of the four fundamental interactions, gravitation is the dominant at astronomical length scales. Gravitys effects are cumulative; by contrast, the effects of positive and negative charges tend to cancel one another, making electromagnetism relatively insignificant on astronomical length scales. The remaining two interactions, the weak and strong nuclear forces, decline very rapidly with distance; their effects are confined mainly to subatomic length scales.
+
+The Universe appears to have much more matter than antimatter, an asymmetry possibly related to the CP violation. 
+
+<|endoftext|>
+
+The size of the Universe is somewhat difficult to define. According to the general theory of relativity, far regions of space may never interact with ours even in the lifetime of the Universe due to the finite speed of light and the ongoing expansion of space. For example, radio messages sent from Earth may never reach some regions of space, even if the Universe were to exist forever: space may expand faster than light can traverse it.
+
+Distant regions of space are assumed to exist and to be part of reality as much as we are, even though we can never interact with them. The spatial region that we can affect and be affected by is the observable universe. The observable universe depends on the location of the observer. By traveling, an observer can come into contact with a greater region of spacetime than an observer who remains still. Nevertheless, even the most rapid traveler will not be able to interact with all of space. Typically, the observable universe is taken to mean the portion of the Universe that is observable from our vantage point in the Milky Way.
+
+The proper distance—the distance as would be measured at a specific time, including the present—between Earth and the edge of the observable universe is 46 billion lightyears
+
+Because we cannot observe space beyond the edge of the observable universe, it is unknown whether the size of the Universe in its totality is finite or infinite. 
+
+<|endoftext|>
+
+Astronomers calculate the age of the Universe by assuming that the LambdaCDM model accurately describes the evolution of the Universe from a very uniform, hot, dense primordial state to its present state and measuring the cosmological parameters which constitute the model.
+
+Over time, the Universe and its contents have evolved; for example, the relative population of quasars and galaxies has changed
+
+The more matter there is in the Universe, the stronger the mutual gravitational pull of the matter. If the Universe were too dense then it would recollapse into a gravitational singularity. However, if the Universe contained too little matter then the selfgravity would be too weak for astronomical structures, like galaxies or planets, to form. Since the Big Bang, the universe has expanded monotonically. Perhaps unsurprisingly, our universe has just the right massenergy density, equivalent to about 5 protons per cubic meter, which has allowed it to expand for the last 13.8 billion years, giving time to form the universe as observed today. 
+
+There are dynamical forces acting on the particles in the Universe which affect the expansion rate. Before 1998, it was expected that the expansion rate would be decreasing as time went on due to the influence of gravitational interactions in the Universe; and thus there is an additional observable quantity in the Universe called the deceleration parameter, which most cosmologists expected to be positive and related to the matter density of the Universe. In 1998, the deceleration parameter was measured by two different groups to be negative, approximately 0.55, which technically implies that the second derivative of the cosmic scale factor a ¨  has been positive in the last 56 billion years. This acceleration does not, however, imply that the Hubble parameter is currently increasing; see deceleration parameter for details. 
+
+<|endoftext|>
+
+Spacetimes are the arenas in which all physical events take place. The basic elements of spacetimes are events. In any given spacetime, an event is defined as a unique position at a unique time. A spacetime is the union of all events , formally organized into a manifold.
+
+The Universe appears to be a smooth spacetime continuum consisting of three spatial dimensions and one temporal  and that its spacetime may have a multiply connected global topology, in analogy with the cylindrical or toroidal topologies of twodimensional spaces. By combining space and time into a single manifold called Minkowski space, physicists have simplified a large number of physical theories, as well as described in a more uniform way the workings of the Universe at both the supergalactic and subatomic levels.
+
+Spacetime events are not absolutely defined spatially and temporally but rather are known to be relative to the motion of an observer. Minkowski space approximates the Universe without gravity; the pseudoRiemannian manifolds of general relativity describe spacetime with matter and gravity. 
+
+<|endoftext|>
+
+General relativity describes how spacetime is curved and bent by mass and energy  is the maximum distance from which particles can have traveled to the observer in the age of the Universe. This horizon represents the boundary between the observable and the unobservable regions of the Universe. The existence, properties, and significance of a cosmological horizon depend on the particular cosmological model.
+
+An important parameter determining the future evolution of the Universe theory is the density parameter, Omega , defined as the average matter density of the universe divided by a critical value of that density. This selects one of three possible geometries depending on whether Ω is equal to, less than, or greater than 1. These are called, respectively, the flat, open and closed universes.
+
+Observations, including the Cosmic Background Explorer  models. 
+
+<|endoftext|>
+
+The Universe may be finetuned; the Finetuned Universe hypothesis is the proposition that the conditions that allow the existence of observable life in the Universe can only occur when certain universal fundamental physical constants lie within a very narrow range of values, so that if any of several fundamental constants were only slightly different, the Universe would have been unlikely to be conducive to the establishment and development of matter, astronomical structures, elemental diversity, or life as it is understood. The proposition is discussed among philosophers, scientists, theologians, and proponents of creationism. 
+
+<|endoftext|>
+
+The Universe is composed almost completely of dark energy, dark matter, and ordinary matter. Other contents are electromagnetic radiation  and antimatter.
+
+The proportions of all types of matter and energy have changed over the history of the Universe. 
+
+Matter, dark matter, and dark energy are distributed homogeneously throughout the Universe over length scales longer than 300 million lightyears or so.
+
+The observable Universe is isotropic on scales significantly larger than superclusters, meaning that the statistical properties of the Universe are the same in all directions as observed from Earth. The Universe is bathed in highly isotropic microwave radiation that corresponds to a thermal equilibrium blackbody spectrum of roughly 2.72548 kelvins.
+
+<|endoftext|>
+
+An explanation for why the expansion of the Universe is accelerating remains elusive. It is often attributed to dark energy, an unknown form of energy that is hypothesized to permeate space.
+
+Two proposed forms for dark energy are the cosmological constant, a constant energy density filling space homogeneously, and scalar fields such as quintessence or moduli, dynamic quantities whose energy density can vary in time and space. Contributions from scalar fields that are constant in space are usually also included in the cosmological constant. The cosmological constant can be formulated to be equivalent to vacuum energy. Scalar fields having only a slight amount of spatial inhomogeneity would be difficult to distinguish from a cosmological constant. 
+
+<|endoftext|>
+
+Dark matter is a hypothetical kind of matter that is invisible to the entire electromagnetic spectrum, but which accounts for most of the matter in the Universe. The existence and properties of dark matter are inferred from its gravitational effects on visible matter, radiation, and the largescale structure of the Universe. Other than neutrinos, a form of hot dark matter, dark matter has not been detected directly, making it one of the greatest mysteries in modern astrophysics. Dark matter neither emits nor absorbs light or any other electromagnetic radiation at any significant level. Dark matter is estimated to constitute 26.8% of the total mass–energy and 84.5% of the total matter in the Universe.
+
+<|endoftext|>
+
+The remaining 4.9% of the mass–energy of the Universe is ordinary matter, that is, atoms, ions, electrons and the objects they form. This matter includes stars, which produce nearly all of the light we see from galaxies, as well as interstellar gas in the interstellar and intergalactic media, planets, and all the objects from everyday life that we can bump into, touch or squeeze.
+
+Ordinary matter commonly exists in four states : solid, liquid, gas, and plasma. However, advances in experimental techniques have revealed other previously theoretical phases, such as Bose–Einstein condensates and fermionic condensates.
+
+Ordinary matter is composed of two types of elementary particles: quarks and leptons. For example, the proton is formed of two up quarks and one down quark; the neutron is formed of two down quarks and one up quark; and the electron is a kind of lepton. An atom consists of an atomic nucleus, made up of protons and neutrons, and electrons that orbit the nucleus. Because most of the mass of an atom is concentrated in its nucleus, which is made up of baryons, astronomers often use the term baryonic matter to describe ordinary matter, although a small fraction of this baryonic matter is electrons.
+
+Soon after the Big Bang, primordial protons and neutrons formed from the quark–gluon plasma of the early Universe as it cooled below two trillion degrees. A few minutes later, in a process known as Big Bang nucleosynthesis, nuclei formed from the primordial protons and neutrons. This nucleosynthesis formed lighter elements, those with small atomic numbers up to lithium and beryllium, but the abundance of heavier elements dropped off sharply with increasing atomic number. Some boron may have been formed at this time, but the next heavier element, carbon, was not formed in significant amounts. Big Bang nucleosynthesis shut down after about 20 minutes due to the rapid drop in temperature and density of the expanding Universe. Subsequent formation of heavier elements resulted from stellar nucleosynthesis and supernova nucleosynthesis. 
+
+<|endoftext|>
+
+Ordinary matter and the forces that act on matter can be described in terms of elementary particles.
+
+<|endoftext|>
+
+A hadron is a composite particle made of quarks held together by the strong force. Hadrons are categorized into two families: baryons  made of one quark and one antiquark. Of the hadrons, protons are stable, and neutrons bound within atomic nuclei are stable. Other hadrons are unstable under ordinary conditions and are thus insignificant constituents of the modern Universe. From approximately 10−6 seconds after the Big Bang, during a period is known as the hadron epoch, the temperature of the universe had fallen sufficiently to allow quarks to bind together into hadrons, and the mass of the Universe was dominated by hadrons. Initially the temperature was high enough to allow the formation of hadron/antihadron pairs, which kept matter and antimatter in thermal equilibrium. However, as the temperature of the Universe continued to fall, hadron/antihadron pairs were no longer produced. Most of the hadrons and antihadrons were then eliminated in particleantiparticle annihilation reactions, leaving a small residual of hadrons by the time the Universe was about one second old.–66
+
+<|endoftext|>
+
+A lepton is an elementary, halfinteger spin particle that does not undergo strong interactions but is subject to the Pauli exclusion principle; no two leptons of the same species can be in exactly the same state at the same time.
+
+The lepton epoch was the period in the evolution of the early Universe in which the leptons dominated the mass of the Universe. It started roughly 1 second after the Big Bang, after the majority of hadrons and antihadrons annihilated each other at the end of the hadron epoch. During the lepton epoch the temperature of the Universe was still high enough to create lepton/antilepton pairs, so leptons and antileptons were in thermal equilibrium. Approximately 10 seconds after the Big Bang, the temperature of the Universe had fallen to the point where lepton/antilepton pairs were no longer created. 
+
+<|endoftext|>
+
+A photon is the quantum of light and all other forms of electromagnetic radiation. It is the force carrier for the electromagnetic force, even when static via virtual photons. The effects of this force are easily observable at the microscopic and at the macroscopic level because the photon has zero rest mass; this allows long distance interactions. Like all elementary particles, photons are currently best explained by quantum mechanics and exhibit wave–particle duality, exhibiting properties of waves and of particles.
+
+The photon epoch started after most leptons and antileptons were annihilated at the end of the lepton epoch, about 10 seconds after the Big Bang. Atomic nuclei were created in the process of nucleosynthesis which occurred during the first few minutes of the photon epoch. For the remainder of the photon epoch the Universe contained a hot dense plasma of nuclei, electrons and photons. About 380,000 years after the Big Bang, the temperature of the Universe fell to the point where nuclei could combine with electrons to create neutral atoms. As a result, photons no longer interacted frequently with matter and the Universe became transparent. The highly redshifted photons from this period form the cosmic microwave background. Tiny variations in temperature and density detectable in the CMB were the early seeds from which all subsequent structure formation took place.–66 
+
+<|endoftext|>
+
+Some speculative theories have proposed that our Universe is but one of a set of disconnected universes, collectively denoted as the multiverse, challenging or enhancing more limited definitions of the Universe. Scientific multiverse models are distinct from concepts such as alternate planes of consciousness and simulated reality.
+
+Max Tegmark developed a fourpart classification scheme for the different types of multiverses that scientists have suggested in response to various Physics problems. An example of such multiverses is the one resulting from the chaotic inflation model of the early universe.
+
+The least controversial category of multiverse in Tegmarks scheme is Level I. The multiverses of this level are composed by distant spacetime events in our own universe. If space is infinite, or sufficiently large and uniform, identical instances of the history of Earths entire Hubble volume occur every so often, simply by chance. Tegmark calculated that our nearest socalled doppelgänger, is 1010115 meters away from us ]
+
+It is possible to conceive of disconnected spacetimes, each existing but unable to interact with one another. 
+
+<|endoftext|>
+
+Historically, there have been many ideas of the cosmos . Theories of an impersonal Universe governed by physical laws were first proposed by the Greeks and Indians.
+
+<|endoftext|>
+
+Many cultures have stories describing the origin of the world and universe. Cultures generally regard these stories as having some truth. There are however many differing beliefs in how these stories apply amongst those believing in a supernatural origin, ranging from a god directly creating the Universe as it is now to a god just setting the wheels in motion .
+
+Ethnologists and anthropologists who study myths have developed various classification schemes for the various themes that appear in creation stories. or the yin and yang of the Tao. 
+
+<|endoftext|>
+
+The preSocratic Greek philosophers and Indian philosophers developed some of the earliest philosophical concepts of the Universe.
+
+Although Heraclitus argued for eternal change, his contemporary Parmenides made the radical suggestion that all change is an illusion, that the true underlying reality is eternally unchanging and of a single nature. Parmenides denoted this reality as τὸ ἐν . Parmenides idea seemed implausible to many Greeks, but his student Zeno of Elea challenged them with several famous paradoxes. Aristotle responded to these paradoxes by developing the notion of a potential countable infinity, as well as the infinitely divisible continuum. Unlike the eternal and unchanging cycles of time, he believed that the world is bounded by the celestial spheres and that cumulative stellar magnitude is only finitely multiplicative.
+
+The Indian philosopher Kanada, founder of the Vaisheshika school, developed a notion of atomism and proposed that light and heat were varieties of the same substance.
+
+The notion of temporal finitism was inspired by the doctrine of creation shared by the three Abrahamic religions: Judaism, Christianity and Islam. The Christian philosopher, John Philoponus, presented the philosophical arguments against the ancient Greek notion of an infinite past and future. Philoponus arguments against an infinite past were used by the early Muslim philosopher, AlKindi . 
+
+<|endoftext|>
+
+Astronomical models of the Universe were proposed soon after astronomy began with the Babylonian astronomers, who viewed the Universe as a flat disk floating in the ocean, and this forms the premise for early Greek maps like those of Anaximander and Hecataeus of Miletus.
+
+Later Greek philosophers, observing the motions of the heavenly bodies, were concerned with developing models of the Universebased more profoundly on empirical evidence. The first coherent model was proposed by Eudoxus of Cnidos. According to Aristotles physical interpretation of the model, celestial spheres eternally rotate with uniform motion around a stationary Earth. Normal matter is entirely contained within the terrestrial sphere.
+
+De Mundo , stated, Five elements, situated in spheres in five regions, the less being in each case surrounded by the greater—namely, earth surrounded by water, water by air, air by fire, and fire by ether—make up the whole Universe.
+
+This model was also refined by Callippus and after concentric spheres were abandoned, it was brought into nearly perfect agreement with astronomical observations by Ptolemy. The success of such a model is largely due to the mathematical fact that any function  that at the center of the Universe was a central fire around which the Earth, Sun, Moon and Planets revolved in uniform circular motion. 
+
+<|endoftext|>
+
+The only other astronomer from antiquity known by name who supported Aristarchuss heliocentric model was Seleucus of Seleucia, a Hellenistic astronomer who lived a century after Aristarchus.
+
+<|endoftext|>
+
+The Aristotelian model was accepted in the Western world for roughly two millennia, until Copernicus revived Aristarchuss perspective that the astronomical data could be explained more plausibly if the Earth rotated on its axis and if the Sun were placed at the center of the Universe. 
+
+<|endoftext|>
+
+As noted by Copernicus himself, the notion that the Earth rotates is very old, dating at least to Philolaus .
+
+This cosmology was accepted by Isaac Newton, Christiaan Huygens and later scientists.
+
+In 1919, when Hooker Telescope was completed, the prevailing view still was that the Universe consisted entirely of the Milky Way Galaxy. Using the Hooker Telescope, Edwin Hubble identified Cepheid variables in several spiral nebulae and in 1922–1923 proved conclusively that Andromeda Nebula and Triangulum among others, were entire galaxies outside our own, thus proving that Universe consists of multitude of galaxies.
+
+The modern era of physical cosmology began in 1917, when Albert Einstein first applied his general theory of relativity to model the structure and dynamics of the Universe.
