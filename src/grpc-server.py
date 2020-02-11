@@ -118,7 +118,7 @@ class Gpt2Servicer(gpt_2_server_pb2_grpc.gpt2Servicer):
 
     def Train(self, request, context):
         print(request.input_dataset_path)
-        train.custom_train(dataset_path = request.input_dataset_path, iterations=request.input_iterations)
+        train.custom_train(dataset_path = request.input_dataset_path, run_name = request.input_run_name, iterations=request.input_iterations)
         return gpt_2_server_pb2.TrainMsg(input_dataset_path = request.input_dataset_path, input_iterations = request.input_iterations, output_status = "Done")
 
     def Improvise(self, request, context):

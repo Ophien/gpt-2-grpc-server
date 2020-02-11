@@ -338,7 +338,7 @@ def custom_train(dataset_path = 'example_train_datasets/universe',
     dataset_name = dataset_name[len(dataset_name) - 1]
 
     # set the last run name to this dataset name
-    run_name = dataset_name
+    # run_name = dataset_name
 
     # pre-process dataset
     parse_dataset(dataset_path)
