@@ -16,8 +16,9 @@ message GenMsg {
 
 message TrainMsg {
     string input_dataset_path = 1;
-    int32 input_iterations = 2;
-    string output_status = 3;
+    string input_run_name = 2;
+    int32 input_iterations = 3;
+    string output_status = 4;
 }
 
 service gpt2 {

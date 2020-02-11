@@ -11,8 +11,8 @@ def gen(stub, input_sentence, model_name, length):
     output_msg = stub.Generate(input_msg).output_generated_text
     return output_msg
 
-def train(stub, dataset_path, iterations):
-    input_msg = gpt_2_server_pb2.TrainMsg(input_dataset_path = dataset_path, input_iterations=iterations, output_status = "None")
+def train(stub, dataset_path, run_name, iterations):
+    input_msg = gpt_2_server_pb2.TrainMsg(input_run_name = run_name, input_dataset_path = dataset_path, input_iterations=iterations, output_status = "None")
     output_msg = stub.Train(input_msg).output_status
     return output_msg
 
@@ -33,6 +33,11 @@ if __name__ == '__main__':
                         type = str,
                         default = "universe",
                         help = "Sentence used to generate text")
+
+    parser.add_argument("--run_name",
+                        type = str,
+                        default = "universe",
+                        help = "Checkpoint for training continuity")
 
     parser.add_argument("--model_name",
                         type = str,
@@ -74,7 +79,7 @@ if __name__ == '__main__':
         print(generated_text)
 
     if args.command == "train":
-        training_output = train(stub, args.dataset, args.iterations)
+        training_output = train(stub, args.dataset, args.run_name, args.iterations)
         print(training_output)
 
     if args.command == "improvise":
