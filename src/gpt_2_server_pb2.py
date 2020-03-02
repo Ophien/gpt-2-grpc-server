@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='gpt2server',
   syntax='proto3',
   serialized_options=_b('\n\033io.grpc.examples.routeguideB\017RouteGuideProtoP\001\242\002\003RTG'),
-  serialized_pb=_b('\n\x12gpt-2-server.proto\x12\ngpt2server\"^\n\x06GenMsg\x12\x1b\n\x13input_seed_sentence\x18\x01 \x01(\t\x12\x18\n\x10input_model_name\x18\x02 \x01(\t\x12\x1d\n\x15output_generated_text\x18\x03 \x01(\t2<\n\x04gpt2\x12\x34\n\x08Generate\x12\x12.gpt2server.GenMsg\x1a\x12.gpt2server.GenMsg\"\x00\x42\x36\n\x1bio.grpc.examples.routeguideB\x0fRouteGuideProtoP\x01\xa2\x02\x03RTGb\x06proto3')
+  serialized_pb=_b('\n\x12gpt-2-server.proto\x12\ngpt2server\"t\n\x06GenMsg\x12\x1b\n\x13input_seed_sentence\x18\x01 \x01(\t\x12\x18\n\x10input_model_name\x18\x02 \x01(\t\x12\x14\n\x0cinput_length\x18\x03 \x01(\x05\x12\x1d\n\x15output_generated_text\x18\x04 \x01(\t\"o\n\x08TrainMsg\x12\x1a\n\x12input_dataset_path\x18\x01 \x01(\t\x12\x16\n\x0einput_run_name\x18\x02 \x01(\t\x12\x18\n\x10input_iterations\x18\x03 \x01(\x05\x12\x15\n\routput_status\x18\x04 \x01(\t2\xdd\x01\n\x04gpt2\x12\x34\n\x08Generate\x12\x12.gpt2server.GenMsg\x1a\x12.gpt2server.GenMsg\"\x00\x12\x35\n\tImprovise\x12\x12.gpt2server.GenMsg\x1a\x12.gpt2server.GenMsg\"\x00\x12\x31\n\x05Top_k\x12\x12.gpt2server.GenMsg\x1a\x12.gpt2server.GenMsg\"\x00\x12\x35\n\x05Train\x12\x14.gpt2server.TrainMsg\x1a\x14.gpt2server.TrainMsg\"\x00\x42\x36\n\x1bio.grpc.examples.routeguideB\x0fRouteGuideProtoP\x01\xa2\x02\x03RTGb\x06proto3')
 )
 
 
@@ -48,8 +48,15 @@ _GENMSG = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='output_generated_text', full_name='gpt2server.GenMsg.output_generated_text', index=2,
-      number=3, type=9, cpp_type=9, label=1,
+      name='input_length', full_name='gpt2server.GenMsg.input_length', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='output_generated_text', full_name='gpt2server.GenMsg.output_generated_text', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -67,10 +74,63 @@ _GENMSG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=34,
-  serialized_end=128,
+  serialized_end=150,
+)
+
+
+_TRAINMSG = _descriptor.Descriptor(
+  name='TrainMsg',
+  full_name='gpt2server.TrainMsg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='input_dataset_path', full_name='gpt2server.TrainMsg.input_dataset_path', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='input_run_name', full_name='gpt2server.TrainMsg.input_run_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='input_iterations', full_name='gpt2server.TrainMsg.input_iterations', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='output_status', full_name='gpt2server.TrainMsg.output_status', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=152,
+  serialized_end=263,
 )
 
 DESCRIPTOR.message_types_by_name['GenMsg'] = _GENMSG
+DESCRIPTOR.message_types_by_name['TrainMsg'] = _TRAINMSG
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GenMsg = _reflection.GeneratedProtocolMessageType('GenMsg', (_message.Message,), {
@@ -79,6 +139,13 @@ GenMsg = _reflection.GeneratedProtocolMessageType('GenMsg', (_message.Message,),
   # @@protoc_insertion_point(class_scope:gpt2server.GenMsg)
   })
 _sym_db.RegisterMessage(GenMsg)
+
+TrainMsg = _reflection.GeneratedProtocolMessageType('TrainMsg', (_message.Message,), {
+  'DESCRIPTOR' : _TRAINMSG,
+  '__module__' : 'gpt_2_server_pb2'
+  # @@protoc_insertion_point(class_scope:gpt2server.TrainMsg)
+  })
+_sym_db.RegisterMessage(TrainMsg)
 
 
 DESCRIPTOR._options = None
@@ -89,8 +156,8 @@ _GPT2 = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=130,
-  serialized_end=190,
+  serialized_start=266,
+  serialized_end=487,
   methods=[
   _descriptor.MethodDescriptor(
     name='Generate',
@@ -99,6 +166,33 @@ _GPT2 = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GENMSG,
     output_type=_GENMSG,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Improvise',
+    full_name='gpt2server.gpt2.Improvise',
+    index=1,
+    containing_service=None,
+    input_type=_GENMSG,
+    output_type=_GENMSG,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Top_k',
+    full_name='gpt2server.gpt2.Top_k',
+    index=2,
+    containing_service=None,
+    input_type=_GENMSG,
+    output_type=_GENMSG,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Train',
+    full_name='gpt2server.gpt2.Train',
+    index=3,
+    containing_service=None,
+    input_type=_TRAINMSG,
+    output_type=_TRAINMSG,
     serialized_options=None,
   ),
 ])

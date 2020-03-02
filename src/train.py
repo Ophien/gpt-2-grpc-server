@@ -297,7 +297,7 @@ def main():
             save()
 
 def parse_dataset(dataset_path):
-    dataset_processing.process_dataset(dataset_path + ".txt")
+    dataset_processing.process_dataset(dataset_path)
 
 def generate_npz_file(dataset_path):
     if os.path.exists(dataset_path + ".npz"):

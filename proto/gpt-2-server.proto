@@ -24,5 +24,6 @@ message TrainMsg {
 service gpt2 {
     rpc Generate(GenMsg) returns (GenMsg) {}
     rpc Improvise(GenMsg) returns (GenMsg) {}
+    rpc Top_k(GenMsg) returns (GenMsg) {}
     rpc Train(TrainMsg) returns (TrainMsg) {}
 }

@@ -173,4 +173,6 @@ def model(hparams, X, past=None, scope='model', reuse=tf.AUTO_REUSE):
         logits = tf.matmul(h_flat, wte, transpose_b=True)
         logits = tf.reshape(logits, [batch, sequence, hparams.n_vocab])
         results['logits'] = logits
+        tf.print("LOGITS:", logits)
+        tf.Print(logits, [logits], "logits: ")
         return results
