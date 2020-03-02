@@ -21,7 +21,7 @@ parser.add_argument('out_npz', metavar='OUT.npz', type=str, help='Output file pa
 def save_npz(model_name="117M", path="example_train_datasets/universe", combine=50000, encoding='utf-8'):
     enc = encoder.get_encoder(model_name)
     print('Reading files')
-    chunks = load_dataset(enc, path + ".txt", combine, encoding=encoding)
+    chunks = load_dataset(enc, path, combine, encoding=encoding)
     print('Writing', path + ".npz")
     np.savez_compressed(path + ".npz", *chunks)
 

@@ -5,6 +5,7 @@ import grpc
 import gpt_2_server_pb2
 import gpt_2_server_pb2_grpc
 import argparse
+import os
 
 def gen(stub, input_sentence, model_name, length):
     input_msg = gpt_2_server_pb2.GenMsg(input_seed_sentence=input_sentence, input_model_name=model_name, input_length=length, output_generated_text="none")
@@ -21,13 +22,18 @@ def improvise(stub, model_name, length):
     output_msg = stub.Improvise(input_msg).output_generated_text
     return output_msg
 
+def top_k(stub, input_sentence, model_name, length):
+    input_msg = gpt_2_server_pb2.GenMsg(input_seed_sentence=input_sentence, input_model_name=model_name, input_length=length, output_generated_text="none")
+    output_msg = stub.Top_k(input_msg).output_generated_text
+    return output_msg
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     
     parser.add_argument("command",
                        type = str,
                        default = "gen",
-                       help = "[generate][train][improvise]")
+                       help = "[generate][train][improvise][top_k]")
 
     parser.add_argument("--input_sentence",
                         type = str,
@@ -76,6 +82,7 @@ if __name__ == '__main__':
 
     if args.command == "generate":
         generated_text = gen(stub, args.input_sentence, args.model_name, args.length)
+        print(args.input_sentence + "... ")
         print(generated_text)
 
     if args.command == "train":
@@ -85,3 +92,8 @@ if __name__ == '__main__':
     if args.command == "improvise":
         generated_text = improvise(stub, args.model_name, args.length)
         print(generated_text)
+
+    if args.command == "top_k":
+        top_k = top_k(stub, args.input_sentence, args.model_name, args.length)
+        print(args.input_sentence + "... ")
+        print(top_k)

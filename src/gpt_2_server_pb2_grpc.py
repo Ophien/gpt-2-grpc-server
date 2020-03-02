@@ -19,6 +19,21 @@ class gpt2Stub(object):
         request_serializer=gpt__2__server__pb2.GenMsg.SerializeToString,
         response_deserializer=gpt__2__server__pb2.GenMsg.FromString,
         )
+    self.Improvise = channel.unary_unary(
+        '/gpt2server.gpt2/Improvise',
+        request_serializer=gpt__2__server__pb2.GenMsg.SerializeToString,
+        response_deserializer=gpt__2__server__pb2.GenMsg.FromString,
+        )
+    self.Top_k = channel.unary_unary(
+        '/gpt2server.gpt2/Top_k',
+        request_serializer=gpt__2__server__pb2.GenMsg.SerializeToString,
+        response_deserializer=gpt__2__server__pb2.GenMsg.FromString,
+        )
+    self.Train = channel.unary_unary(
+        '/gpt2server.gpt2/Train',
+        request_serializer=gpt__2__server__pb2.TrainMsg.SerializeToString,
+        response_deserializer=gpt__2__server__pb2.TrainMsg.FromString,
+        )
 
 
 class gpt2Servicer(object):
@@ -32,6 +47,27 @@ class gpt2Servicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Improvise(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Top_k(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Train(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_gpt2Servicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -39,6 +75,21 @@ def add_gpt2Servicer_to_server(servicer, server):
           servicer.Generate,
           request_deserializer=gpt__2__server__pb2.GenMsg.FromString,
           response_serializer=gpt__2__server__pb2.GenMsg.SerializeToString,
+      ),
+      'Improvise': grpc.unary_unary_rpc_method_handler(
+          servicer.Improvise,
+          request_deserializer=gpt__2__server__pb2.GenMsg.FromString,
+          response_serializer=gpt__2__server__pb2.GenMsg.SerializeToString,
+      ),
+      'Top_k': grpc.unary_unary_rpc_method_handler(
+          servicer.Top_k,
+          request_deserializer=gpt__2__server__pb2.GenMsg.FromString,
+          response_serializer=gpt__2__server__pb2.GenMsg.SerializeToString,
+      ),
+      'Train': grpc.unary_unary_rpc_method_handler(
+          servicer.Train,
+          request_deserializer=gpt__2__server__pb2.TrainMsg.FromString,
+          response_serializer=gpt__2__server__pb2.TrainMsg.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

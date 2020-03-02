@@ -2,13 +2,15 @@ import tensorflow as tf
 
 import model
 
+
+
 def top_k_logits(logits, k):
     if k == 0:
         # no truncation
         return logits
 
     def _top_k():
-        values, _ = tf.nn.top_k(logits, k=k)
+        values, indexes = tf.nn.top_k(logits, k=k)
         min_values = values[:, -1, tf.newaxis]
         return tf.where(
             logits < min_values,
@@ -35,6 +37,48 @@ def top_p_logits(logits, p):
             logits,
         )
 
+def sample_single_word(*, hparams, length, start_token=None, batch_size=None, context=None, temperature=1, top_k=0, top_p=0.0):
+    def step(hparams, tokens, past=None):
+        lm_output = model.model(hparams=hparams, X=tokens, past=past, reuse=tf.AUTO_REUSE)
+
+        logits = lm_output['logits'][:, :, :hparams.n_vocab]
+        presents = lm_output['present']
+        presents.set_shape(model.past_shape(hparams=hparams, batch_size=batch_size))
+        return {
+            'logits': logits,
+            'presents': presents,
+        }
+
+    if start_token is None:
+        assert context is not None, 'Specify exactly one of start_token and context!'
+    else:
+        assert context is None, 'Specify exactly one of start_token and context!'
+        context = tf.fill([batch_size, 1], start_token)
+
+    context_output = step(hparams, context[:, :-1])
+    logits = context_output['logits'][:,-1,:] / tf.to_float(temperature)
+    # generated = tf.sort(generated, direction='DESCENDING')
+
+    values, indexes = tf.nn.top_k(logits, k=top_k)
+
+    # min_values = values[:, -1, tf.newaxis]
+    # top_logits = tf.where(
+    #    logits < min_values,
+    #    tf.ones_like(logits, dtype=logits.dtype) * -1e10,
+    #    logits,
+    #)
+
+    # logits, values = tf.nn.top_k(generated, k=10)
+    # logits, index = tf.nn.top_k(generated, k=top_k, sorted=True)
+    # logits = tf.Print(logits, [logits], "Logits: ")
+    # logits = top_p_logits(generated, p=top_p)
+    # top_logits = top_k_logits(logits, k=top_k)
+    # tf.Print(logits, [logits[0]], "LOGITS: ")
+
+    # sample = top_logits
+    # sample = tf.multinomial(top_logits, num_samples=length, output_dtype=tf.int32)
+   
+    return values, indexes
 
 def sample_sequence(*, hparams, length, start_token=None, batch_size=None, context=None, temperature=1, top_k=0, top_p=0.0):
     if start_token is None:
@@ -53,7 +97,7 @@ def sample_sequence(*, hparams, length, start_token=None, batch_size=None, conte
             'logits': logits,
             'presents': presents,
         }
-
+    
     with tf.name_scope('sample_sequence'):
         # Don't feed the last context token -- leave that to the loop below
         # TODO: Would be slightly faster if we called step on the entire context,
@@ -67,12 +111,16 @@ def sample_sequence(*, hparams, length, start_token=None, batch_size=None, conte
                 logits = top_p_logits(logits, p=top_p)
             else:
                 logits = top_k_logits(logits, k=top_k)
+            # logits = tf.Print(logits, "Logits: ")
             samples = tf.multinomial(logits, num_samples=1, output_dtype=tf.int32)
-            return [
+            # samples = tf.Print(samples, [samples], "samples: ")
+            token = [
                 tf.concat([past, next_outputs['presents']], axis=-2),
                 tf.squeeze(samples, axis=[1]),
                 tf.concat([output, samples], axis=1),
             ]
+
+            return token
 
         def cond(*args):
             return True
