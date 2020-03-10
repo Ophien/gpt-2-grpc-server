@@ -3,7 +3,7 @@
 
 # GPT2 GRPC Server
 
-This repository contains the OpenAi GPT2 transformer neural network GRPC server that can generate text given a seed sentence.
+This repository contains the GPT2 model with several mods and servers.
 
 # Requisites
 
@@ -37,17 +37,19 @@ Call the client with
 python3 grpc-client.py
 ```
 
-There are three commands available
+There are four commands available
 
-* generate - Generate text using a specified model and input utterance. Example:
+* generate - Generates text using a specified model and input utterance. Example:
 
 ```
 python3 grpc-client.py generate --input_sentence "Donald Trump" --model_name 117M --server_address localhost --server_port 50021
 ```
 
+* top_k - Generates the top_k next probable word.
+
 where, the "Donald Trump" is the seed sentence, 117M is the 117 million parameters model and the others are the server address and port.
 
-* train - train a new model based on a dataset in a txt file. Example:
+* train - Trains a new model based on a dataset in a txt file. Example:
 
 ```
 python3 grpc-client.py train --dataset "example_train_datasets/michael_jackson_songs" --iterations 100
@@ -55,7 +57,7 @@ python3 grpc-client.py train --dataset "example_train_datasets/michael_jackson_s
 
 where, "example_train_datasets/michael_jackson_songs" is the dataset file without extension, and the ***iterations*** parameter is the number of iterations of the training algorithm.
 
-* improvise - generate an improvised sentence based on a trained model. Example:
+* improvise - Generates an improvised sentence based on a trained model. Example:
 
 ```
 python3 grpc-client.py improvise --model_name michael_jackson_songs
